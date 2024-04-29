@@ -19,6 +19,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: var(--background-Body);
+    box-sizing: border-box;
 }
 .img{
     height: 200px;
@@ -36,7 +37,8 @@ body{
     height: 80vh;
     width: 40vw;
     border: 2px solid transparent;
-    border-radius: 20px;
+    border-radius: 2px;
+    overflow-y: scroll;
 }
 
 .input_text{
@@ -67,4 +69,8 @@ body{
     border: 2px solid transparent;
     border-radius: 40px;
     font-weight: bold;
+}
+
+.bloco{
+    box-sizing: border-box;
 }

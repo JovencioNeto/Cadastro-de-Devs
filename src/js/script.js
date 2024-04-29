@@ -85,8 +85,8 @@ form.addEventListener('submit', (ev) =>{
         const tecnologia_name = input_tecnologias.value
         let time_tecnologias = ''
 
-        document.querySelectorAll(`input[class = 'radio']:checked`).forEach(function (item){
-            time_tecnologias += item.value + '\n'
+        document.querySelectorAll(`input[type = 'radio']:checked`).forEach(function (item){
+            if (let(time_tecnologias += item.value) == 0){}
         })
     
         console.log({name, tecnologia_name, time_tecnologias})
