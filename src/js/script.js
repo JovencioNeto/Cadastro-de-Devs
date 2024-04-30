@@ -3,12 +3,8 @@ const button = document.getElementById('button')
 const form = document.getElementById('form')
 const button_cadastrar = document.getElementById('cadastrar')
 let number_input = 0
-
-form.addEventListener('submit', (ev) =>{
-    ev.preventDefault()
-
-    button.addEventListener('click', (ev) =>{
-    ev.preventDefault()
+let number = number_input
+function buttonADD(){
 
     const  div = document.getElementById('bloco')
 
@@ -77,16 +73,21 @@ form.addEventListener('submit', (ev) =>{
         ev.preventDefault()
         div.removeChild(bloco)
     })
+    number_input++
+}
+form.addEventListener('submit', (ev) =>{
+    ev.preventDefault()
 
     button_cadastrar.addEventListener('click', (ev) => {
         ev.preventDefault()
-    
+
         const name = document.getElementById('name').value
-        const tecnologia_name = input_tecnologias.value
+        const tecnologia_name = document.getElementById('tecnologias').value
+        
         let time_tecnologias = ''
 
         document.querySelectorAll(`input[type = 'radio']:checked`).forEach(function (item){
-            if (let(time_tecnologias += item.value) == 0){}
+            time_tecnologias = item
         })
     
         console.log({name, tecnologia_name, time_tecnologias})
@@ -95,12 +96,7 @@ form.addEventListener('submit', (ev) =>{
             "Cadastro concluido" +
         "\nNome do dev: " + name +
         "\nNome da tecnologia: " + tecnologia_name +
-        "\nTempo de uso das tecnologias: " + time_tecnologias
+        "\nTempo de uso das tecnologias: " + time_tecnologias.value
         )
-        })
-
-    number_input++
     })
 })
-
-
