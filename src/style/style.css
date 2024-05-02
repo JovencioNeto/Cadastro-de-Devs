@@ -1,6 +1,9 @@
 :root{
     --white : white;
     --background-Body: #231942;
+    --blue: blue;
+    --black: black;
+
 }
 
 
@@ -19,7 +22,6 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: var(--background-Body);
-    box-sizing: border-box;
 }
 .img{
     height: 200px;
@@ -44,7 +46,7 @@ body{
 .input_text{
     width: 300px;
     height: 35px;
-    border: 2px solid black;
+    border: 2px solid var(--black);
     border-radius: 10px;
 }
 
@@ -63,14 +65,10 @@ body{
 
 .cadastrar{
     color: white;
-    background-color: blue;
+    background-color: var(--blue);
     width: 100px;
     height: 35px;
     border: 2px solid transparent;
     border-radius: 40px;
     font-weight: bold;
-}
-
-.bloco{
-    box-sizing: border-box;
 }

@@ -1,14 +1,17 @@
 
 const button = document.getElementById('button')
 const form = document.getElementById('form')
-const button_cadastrar = document.getElementById('cadastrar')
+const button_cadastro = document.getElementById('cadastrar')
 let number_input = 0
 let number = number_input
+
 function buttonADD(){
 
-    const  div = document.getElementById('bloco')
+    const  div_bloco = document.getElementById('bloco')
 
-    const bloco = document.createElement('div')
+    const area_cadastro = document.createElement('div')
+    area_cadastro.id = "area_cadastro"
+
     const br = document.createElement('br')
     const br1 = document.createElement('br')
     const br2 = document.createElement('br')
@@ -65,38 +68,40 @@ function buttonADD(){
     const remove = document.createElement('button')
     remove.innerText = 'Remover tecnologia'
 
-    bloco.append(label_Tecnologia,br,input_tecnologias,br1,subTitulo,br2,input_time1,label_time1,input_time2,label_time2,input_time3,label_time3,br3,remove)
-    div.appendChild(bloco)
-    form.appendChild(div)
+
+    area_cadastro.append(label_Tecnologia,br,input_tecnologias,br1,subTitulo,br2,input_time1,label_time1,input_time2,label_time2,input_time3,label_time3,br3,remove)
+    div_bloco.appendChild(area_cadastro)
+    form.appendChild(div_bloco)
 
     remove.addEventListener('click', (ev) =>{
         ev.preventDefault()
-        div.removeChild(bloco)
+        div_bloco.removeChild(area_cadastro)
     })
+
     number_input++
 }
+
 form.addEventListener('submit', (ev) =>{
     ev.preventDefault()
-
-    button_cadastrar.addEventListener('click', (ev) => {
-        ev.preventDefault()
-
-        const name = document.getElementById('name').value
-        const tecnologia_name = document.getElementById('tecnologias').value
-        
-        let time_tecnologias = ''
-
-        document.querySelectorAll(`input[type = 'radio']:checked`).forEach(function (item){
-            time_tecnologias = item
-        })
-    
-        console.log({name, tecnologia_name, time_tecnologias})
-    
-        alert(
-            "Cadastro concluido" +
-        "\nNome do dev: " + name +
-        "\nNome da tecnologia: " + tecnologia_name +
-        "\nTempo de uso das tecnologias: " + time_tecnologias.value
-        )
-    })
 })
+
+function button_cadastrar(){
+
+    const name = document.getElementById('name').value
+    const tecnologia_name = document.getElementById('tecnologias').value
+    
+    let time_tecnologias = ''
+
+    document.querySelectorAll(`input[type = 'radio']:checked`).forEach(function (item){
+        time_tecnologias = item
+    })
+
+    console.log({name, tecnologia_name, time_tecnologias})
+
+    alert(
+    "Cadastro concluido" +
+    "\nNome do dev: " + name +
+    "\nNome da tecnologia: " + tecnologia_name +
+    "\nTempo de uso das tecnologias: " + time_tecnologias.value
+    )
+}
