@@ -7,6 +7,8 @@ let number = number_input
 
 function buttonADD(){
 
+    number_input++
+
     const  div_bloco = document.getElementById('bloco')
 
     const area_cadastro = document.createElement('div')
@@ -76,9 +78,8 @@ function buttonADD(){
     remove.addEventListener('click', (ev) =>{
         ev.preventDefault()
         div_bloco.removeChild(area_cadastro)
+        number_input--
     })
-
-    number_input++
 }
 
 form.addEventListener('submit', (ev) =>{
@@ -88,20 +89,22 @@ form.addEventListener('submit', (ev) =>{
 function button_cadastrar(){
 
     const name = document.getElementById('name').value
-    const tecnologia_name = document.getElementById('tecnologias').value
-    
-    let time_tecnologias = ''
-
-    document.querySelectorAll(`input[type = 'radio']:checked`).forEach(function (item){
-        time_tecnologias = item
-    })
+    const tecnologia_name = document.querySelectorAll(`input[id = 'tecnologias']`)
+    const time_tecnologias = document.querySelectorAll(`input[type = 'radio']:checked`)
+    if(number_input == 0){
+        alert("Não foi inserida nenhuma tecnologia" +
+            "\nNome do dev: " + name
+        );
+    }
+    for(var i = 0; i < number_input; i++ ){
+        alert(
+            "Cadastro concluido" +
+            "\nNome do dev: " + name +
+            "\nNome da tecnologia: " + tecnologia_name[i].value +
+            "\nTempo de uso das tecnologias: " + time_tecnologias[i].value
+        )
+    }
 
     console.log({name, tecnologia_name, time_tecnologias})
 
-    alert(
-    "Cadastro concluido" +
-    "\nNome do dev: " + name +
-    "\nNome da tecnologia: " + tecnologia_name +
-    "\nTempo de uso das tecnologias: " + time_tecnologias.value
-    )
 }
