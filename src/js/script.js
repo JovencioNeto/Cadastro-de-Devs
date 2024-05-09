@@ -1,24 +1,31 @@
-
+// Recebendo valores nas variáveis a partir do ID
 const button = document.getElementById('button')
 const form = document.getElementById('form')
 const button_cadastro = document.getElementById('cadastrar')
+// Varíavel que irá aumentar ou diminuir para diferenciar os inputs e labels e sua coleta de informações
 let number_input = 0
-let number = number_input
 
-function buttonADD(){
+// Recebe uma div a partir do ID e dentro dessa div existe outra com os inputs e labels dentro do formulário
+button.addEventListener('click', () =>{
 
     number_input++
+    // Variável com o ID bloco
+    const  section_bloco = document.getElementById('bloco')
 
-    const  div_bloco = document.getElementById('bloco')
-
+    // Criação de uma nova Div e seu ID
     const area_cadastro = document.createElement('div')
     area_cadastro.id = "area_cadastro"
 
+    // Quebras de linhas que vão ser utilizadas
     const br = document.createElement('br')
     const br1 = document.createElement('br')
     const br2 = document.createElement('br')
     const br3 = document.createElement('br')
+    const br4 = document.createElement('br')
+    const br5 = document.createElement('br')
 
+
+    // Inputs e labels e sua configurações
     const label_Tecnologia = document.createElement('label')
     label_Tecnologia.innerText = 'Nome da tecnologia'
     label_Tecnologia.setAttribute('for','tecnologias') 
@@ -69,24 +76,21 @@ function buttonADD(){
 
     const remove = document.createElement('button')
     remove.innerText = 'Remover tecnologia'
+    remove.id = 'remove_button'
 
 
-    area_cadastro.append(label_Tecnologia,br,input_tecnologias,br1,subTitulo,br2,input_time1,label_time1,input_time2,label_time2,input_time3,label_time3,br3,remove)
-    div_bloco.appendChild(area_cadastro)
-    form.appendChild(div_bloco)
+    area_cadastro.append(label_Tecnologia,br,input_tecnologias,br1,subTitulo,br2,input_time1,label_time1,br4,input_time2,label_time2,br5,input_time3,label_time3,br3,remove)
+    section_bloco.appendChild(area_cadastro)
+    form.appendChild(section_bloco)
 
     remove.addEventListener('click', (ev) =>{
         ev.preventDefault()
-        div_bloco.removeChild(area_cadastro)
+        section_bloco.removeChild(area_cadastro)
         number_input--
     })
-}
-
-form.addEventListener('submit', (ev) =>{
-    ev.preventDefault()
 })
 
-function button_cadastrar(){
+button_cadastro.addEventListener('click', (ev) =>{
 
     const name = document.getElementById('name').value
     const tecnologia_name = document.querySelectorAll(`input[id = 'tecnologias']`)
@@ -107,4 +111,9 @@ function button_cadastrar(){
 
     console.log({name, tecnologia_name, time_tecnologias})
 
-}
+})
+
+form.addEventListener('submit', (ev) =>{
+    ev.preventDefault()
+
+})

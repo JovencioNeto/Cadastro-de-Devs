@@ -1,11 +1,13 @@
 :root{
     --white : white;
-    --background-Body: #231942;
+    --background-Body-1: #8a35c8;
+    --background-Body-2: #4e51ce;
+    --background-Body-3: #c04da3;
     --blue: blue;
     --black: black;
-
+    --green:#2ec4b6;
+    --color-remove:#231942;
 }
-
 
 *{
     margin: 0;
@@ -21,15 +23,27 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--background-Body);
+    background: linear-gradient(to right, var(--background-Body-1) , var(--background-Body-2), var(--background-Body-3));
+    animation:  5s ease infinite;
 }
+
 .img{
     height: 200px;
     width: 200px;
     border: 2px solid transparent;
     border-radius: 20px;
+    cursor: pointer;
 }
 
+.img_area{
+    position: relative;
+    bottom: 50px;
+}
+
+.text_logo{
+    position: relative;
+    bottom: 30px;
+}
 .centro{
     background-color: var(--white);
     display: flex;
@@ -44,24 +58,16 @@ body{
 }
 
 .input_text{
-    width: 300px;
-    height: 35px;
+    width: 24.8rem;
+    height: 3rem;
     border: 2px solid var(--black);
     border-radius: 10px;
 }
-
-/**button{
-    width: 300px;
-    height: 35px;
-    border: 2px solid black;
-    border-radius: 10px;
-}**/
 
 .input_text_tecnologias{
     width: 200px;
     height: 25px;
 }
-
 
 .cadastrar{
     color: white;
@@ -71,4 +77,53 @@ body{
     border: 2px solid transparent;
     border-radius: 40px;
     font-weight: bold;
+}
+
+.button{
+    color: white;
+    background-color: var(--green);
+    width: 250px;
+    height: 35px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.button_area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
+}
+#area_cadastro{
+    height: 10rem;
+    padding: 0 3.5rem 3.5rem 3.5rem;
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    min-height: 200px;
+    max-height: 200px;
+}
+button:hover{
+    filter: brightness(0.8) ;
+}
+
+    
+#remove_button{
+    padding-right: 10rem;
+    text-align: center;
+    height: 2rem;
+    background-color: var(--color-remove);
+    color: var(--white);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+#tecnologias{
+    width: 17.5rem;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    height: 2rem;
 }
