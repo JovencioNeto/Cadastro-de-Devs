@@ -1,5 +1,5 @@
 # Sistema de Cadastro de devs
-Nesse site é feito um cadastro para programadores e sua respectiva linguagem escolhida, onde o usuário se cadastra de acordo com as opções oferecidas
+Nesse site é feito um cadastro para programadores e sua respectiva tecnolgia escolhida, onde o usuário se cadastra de acordo com as opções oferecidas
 ## Visão Geral
 Esse projeto é feito para que devs se cadastrem, utilizando : Nome, Nome da Tecnologia e Tempo de Experiência. De forma simples e fácil, assim como em uma rede social
 ## Funcionalidades
