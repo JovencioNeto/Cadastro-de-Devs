@@ -12,6 +12,10 @@ button.addEventListener('click', () =>{
     // Variável com o ID bloco
     const  section_bloco = document.getElementById('bloco')
 
+    // Variável de uma Div para utilizar no botão Remover e estiliza-lo no CSS
+    const div_remove = document.createElement('div')
+    div_remove.id = 'div_remove'
+
     // Criação de uma nova Div e seu ID
     const area_cadastro = document.createElement('div')
     area_cadastro.id = "area_cadastro"
@@ -78,8 +82,8 @@ button.addEventListener('click', () =>{
     remove.innerText = 'Remover tecnologia'
     remove.id = 'remove_button'
 
-
-    area_cadastro.append(label_Tecnologia,br,input_tecnologias,br1,subTitulo,br2,input_time1,label_time1,br4,input_time2,label_time2,br5,input_time3,label_time3,br3,remove)
+    div_remove.appendChild(remove)
+    area_cadastro.append(label_Tecnologia,br,input_tecnologias,br1,subTitulo,br2,input_time1,label_time1,br4,input_time2,label_time2,br5,input_time3,label_time3,br3,div_remove)
     section_bloco.appendChild(area_cadastro)
     form.appendChild(section_bloco)
 

@@ -27,6 +27,10 @@ body{
     animation:  5s ease infinite;
 }
 
+button:hover{
+    filter: brightness(0.8) ;
+}
+
 .img{
     height: 200px;
     width: 200px;
@@ -50,11 +54,14 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80vh;
-    width: 40vw;
+    height: 100vh;
+    width: 60vw;
     border: 2px solid transparent;
     border-radius: 2px;
+    scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .input_text{
@@ -70,7 +77,7 @@ body{
 }
 
 .cadastrar{
-    color: white;
+    color: var(--white);
     background-color: var(--blue);
     width: 100px;
     height: 35px;
@@ -80,7 +87,7 @@ body{
 }
 
 .button{
-    color: white;
+    color: var(--white);
     background-color: var(--green);
     width: 250px;
     height: 35px;
@@ -97,6 +104,12 @@ body{
     position: relative;
     top: 50px;
 }
+.text_welcome{
+    position: relative;
+    bottom: 35px;
+}
+
+
 #area_cadastro{
     height: 10rem;
     padding: 0 3.5rem 3.5rem 3.5rem;
@@ -104,14 +117,11 @@ body{
     border-radius: 10px;
     min-height: 200px;
     max-height: 200px;
+    margin-bottom: 30px;
 }
-button:hover{
-    filter: brightness(0.8) ;
-}
-
     
 #remove_button{
-    padding-right: 10rem;
+    width: 17.5rem;
     text-align: center;
     height: 2rem;
     background-color: var(--color-remove);
@@ -128,4 +138,10 @@ button:hover{
     border: 2px solid var(--black);
     border-radius: 5px;
     height: 2rem;
+}
+#div_remove{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
