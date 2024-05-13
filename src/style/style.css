@@ -1,3 +1,4 @@
+
 :root{
     --white : white;
     --background-Body-1: #8a35c8;
@@ -47,6 +48,7 @@ button:hover{
 .img_area{
     position: relative;
     bottom: 50px;
+    margin-top: 20vh;
 }
 
 .text_logo{
@@ -56,7 +58,7 @@ button:hover{
 .centro{
     background-color: var(--white);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     height: 100vh;
@@ -67,6 +69,7 @@ button:hover{
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    flex-wrap: nowrap;
 }
 
 .input_text{
@@ -81,7 +84,7 @@ button:hover{
     height: 25px;
 }
 
-.cadastrar{
+.button_cadastrar{
     color: var(--white);
     background-color: var(--blue);
     width: 100px;
@@ -91,7 +94,7 @@ button:hover{
     font-weight: bold;
 }
 
-.button{
+.button_technologies{
     color: var(--white);
     background-color: var(--green);
     width: 250px;
@@ -109,11 +112,11 @@ button:hover{
     position: relative;
     top: 50px;
 }
+
 .text_welcome{
     position: relative;
     bottom: 35px;
 }
-
 
 #area_cadastro{
     height: 10rem;

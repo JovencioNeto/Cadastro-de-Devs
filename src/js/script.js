@@ -1,14 +1,19 @@
 // Recebendo valores nas variáveis a partir do ID
-const button = document.getElementById('button')
+const button_technologies = document.getElementById('button_technologies')
 const form = document.getElementById('form')
-const button_cadastro = document.getElementById('cadastrar')
+const button_cadastro = document.getElementById('button_cadastrar')
 // Varíavel que irá aumentar ou diminuir para diferenciar os inputs e labels e sua coleta de informações
 let number_input = 0
 
 // Recebe uma div a partir do ID e dentro dessa div existe outra com os inputs e labels dentro do formulário
-button.addEventListener('click', () =>{
+button_technologies.addEventListener('click', (ev) =>{
+    // Adição da configuração EV para evitar atualizações de página
 
+    ev.preventDefault()
+    
+    // Variável que altera a cada "Click"
     number_input++
+
     // Variável com o ID bloco
     const  section_bloco = document.getElementById('bloco')
 
@@ -82,40 +87,61 @@ button.addEventListener('click', () =>{
     remove.innerText = 'Remover tecnologia'
     remove.id = 'remove_button'
 
+    // Configurando para que uma variavel fique identada dentro de outras segundo a sequencia feita
+
     div_remove.appendChild(remove)
     area_cadastro.append(label_Tecnologia,br,input_tecnologias,br1,subTitulo,br2,input_time1,label_time1,br4,input_time2,label_time2,br5,input_time3,label_time3,br3,div_remove)
     section_bloco.appendChild(area_cadastro)
     form.appendChild(section_bloco)
 
+    // Adição de um evento de "Click" ao botão de remover tecnologia
+
     remove.addEventListener('click', (ev) =>{
         ev.preventDefault()
         section_bloco.removeChild(area_cadastro)
+        // Alteração da varável para coletar os valores anteriores
         number_input--
     })
 })
 
+// Adição de evento de "Click" ao botão de cadastrar tecnologia
+
 button_cadastro.addEventListener('click', (ev) =>{
+
+    // Retomando as variáveis anteriores com outras variaveis a partir do ID
 
     const name = document.getElementById('name').value
     const tecnologia_name = document.querySelectorAll(`input[id = 'tecnologias']`)
     const time_tecnologias = document.querySelectorAll(`input[type = 'radio']:checked`)
-    if(number_input == 0){
-        alert("Não foi inserida nenhuma tecnologia" +
+
+    // Verificar se foi ou não criado uma tecnologia e coletando as primeiras ocorrências
+
+    if((name.length > 0) && (tecnologia_name.length == 0) && time_tecnologias.length == 0){
+        alert("Cadastro conclído!" +
+            "\nApenas o nome do Dev foi inserido" +
             "\nNome do dev: " + name
         );
     }
-    for(var i = 0; i < number_input; i++ ){
-        alert(
-            "Cadastro concluido" +
-            "\nNome do dev: " + name +
-            "\nNome da tecnologia: " + tecnologia_name[i].value +
-            "\nTempo de uso das tecnologias: " + time_tecnologias[i].value
-        )
+    else if(name.length == 0 || tecnologia_name.length == 0|| time_tecnologias.length == 0){
+        alert("Algumas espaços não foram preenchidos, preencha os campos corretamente!");
     }
+    else if(name.length > 0 && tecnologia_name.length > 0 && time_tecnologias.length > 0){
+        for(var i = 0; i < number_input; i++ ){
+            alert(
+                "Cadastro concluido" +
+                "\nNome do dev: " + name +
+                "\nNome da tecnologia: " + tecnologia_name[i].value +
+                "\nTempo de uso das tecnologias: " + time_tecnologias[i].value
+            )
+        }}
+
+    // Console.log para mostrar no console se os valores estão sendo recebidos ou não
 
     console.log({name, tecnologia_name, time_tecnologias})
 
 })
+
+// Adição de um Evento para coletar valores que estão dentro da tag Form
 
 form.addEventListener('submit', (ev) =>{
     ev.preventDefault()

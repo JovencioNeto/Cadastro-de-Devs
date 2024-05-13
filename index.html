@@ -9,33 +9,43 @@
     <title>Cadastro de Devs</title>
 </head>
 <body> 
+
     <!--Div contendo tudo que meu site vai possui, incluindo imagem, botões e formulários-->
+
     <div class="centro">
+
         <!--Imagem para deixar exuberante e atraente-->
+
         <div class="img_area">
             <img src="./src/img/logo.avif" alt="Imagem Inial" class="img">
         </div>
+
         <!--Frases iniciais-->
+
         <h1 class="text_logo">Cadastro de Devs</h1> <br>
 
         <p class="text_welcome">Bem vindo(a)! Ao site de cadastro para desenvolvedores e suas tecnologias!</p>
         
         <!--Formulário para receber informações através de Inputs e Divs para estiliza-los e organiza-los-->
+
         <form id="form">
+
             <div>
                 <label for="name" class="label_name">Nome completo do Dev:</label> <br>
                 <input type="text" name="name" id="name" placeholder="Digite o nome do Dev" class="input_text">
             </div>
             
             <!--Tag Section que irá ser usada como pai da área gerada pela botão de Adicionar uma nova tecnologia-->
+
             <section id="bloco" class="bloco"> </section> <br>
 
         </form>
 
         <!--Div para estilizar e organizar os botões de Cadastrar e Adicionar uma nova ecnologia-->
+        
         <div class="button_area">
-            <button id="button" class="button">Adicionar uma nova tecnologia</button> <br>             
-            <button id="cadastrar" type="submit" class="cadastrar" >Cadastrar</button> <br>
+            <button id="button_technologies" class="button_technologies">Adicionar uma nova tecnologia</button> <br>             
+            <button id="button_cadastrar" type="submit" class="button_cadastrar" >Cadastrar</button> <br>
         </div>
         
     </div>
