@@ -117,7 +117,7 @@ button_cadastro.addEventListener('click', (ev) =>{
     // Verificar se foi ou não criado uma tecnologia e coletando as primeiras ocorrências
 
     if((name.length > 0) && (tecnologia_name.length == 0) && time_tecnologias.length == 0){
-        alert("Cadastro conclído!" +
+        alert("Cadastro concluído!" +
             "\nApenas o nome do Dev foi inserido" +
             "\nNome do dev: " + name
         );
