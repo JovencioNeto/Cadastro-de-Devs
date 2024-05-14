@@ -107,7 +107,8 @@ button_technologies.addEventListener('click', (ev) =>{
 // Adição de evento de "Click" ao botão de cadastrar tecnologia
 
 button_cadastro.addEventListener('click', (ev) =>{
-
+    
+    ev.preventDefault()
     // Retomando as variáveis anteriores com outras variaveis a partir do ID
 
     const name = document.getElementById('name').value
